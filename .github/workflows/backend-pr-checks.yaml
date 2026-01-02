@@ -1,17 +1,11 @@
-name: PR Quality Checks
+name: Backend PR Quality Checks
 
 on:
   pull_request:
     branches:
       - develop
-    paths:
-      - 'github/**'
-      - 'backend/**'
+    paths-ignore:
       - 'frontend/**'
-      - 'public/**'
-      - '.env.**'
-      - '**.md'
-      - '.gitignore'
     types: [opened, edited, synchronize, reopened]
 
 permissions:
@@ -41,13 +35,12 @@ jobs:
           path: |
             ~/.npm
             node_modules
-            frontend/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json', '**/frontend/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
       - name: Install Dependencies
-        run: npm ci && cd frontend && npm ci
+        run: npm ci
 
       - name: Prettier Check
         run: |
@@ -64,7 +57,7 @@ jobs:
       - name: ESLint Check
         run: |
           echo "🔧 Running ESLint checks..."
-          npm run lint && cd frontend && npm run lint
+          npm run lint
           echo "✅ ESLint checks passed!"
 
       - name: Build Check
@@ -92,10 +85,10 @@ jobs:
           node-version: 22
           cache: 'npm'
 
-      - name: Install Dependencies
+      - name: Install Backend Dependencies
         run: npm ci
 
-      - name: Npm Audit Check
+      - name: Backend Npm Audit Check
         run: |
           echo "🔒 Running npm security audit..."
           npm audit --audit-level=high
