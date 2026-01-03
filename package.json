@@ -23,7 +23,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "jose": "^6.1.0",
     "mongoose": "^9.0.0",
     "serve-favicon": "^2.5.1"
@@ -33,7 +33,7 @@
     "@types/bcryptjs": "^3.0.0",
     "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.5",
+    "@types/express": "^5.0.6",
     "@types/serve-favicon": "^2.5.7",
     "cross-env": "^10.1.0",
     "eslint": "^9.32.0",
