@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 const useGrid = (size) => {
   const [grid, setGrid] = useState({
-    columns: 0,
-    rows: 0,
+    columns: Math.floor(window.innerWidth / size),
+    rows: Math.floor(window.innerHeight / size),
   });
 
   const getGrid = useCallback(() => {
@@ -14,8 +14,6 @@ const useGrid = (size) => {
   }, [size]);
 
   useEffect(() => {
-    getGrid();
-
     window.addEventListener('resize', getGrid);
 
     return () => window.removeEventListener('resize', getGrid);
