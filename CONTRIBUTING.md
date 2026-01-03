@@ -42,7 +42,7 @@ npm test
 1.  Create a new branch for your feature or bugfix.
 2.  Commit your changes with clear messages.
 3.  Push to your fork and submit a Pull Request.
-4.  Describe your changes detailedly in the PR description.
+4.  Describe your changes in detail in the PR description.
 
 ## License
 

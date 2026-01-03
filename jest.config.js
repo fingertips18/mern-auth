@@ -5,4 +5,5 @@ export default {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   testMatch: ['**/tests/**/*.test.js'],
+  setupFilesAfterEnv: ['<rootDir>/backend/tests/setup.js'],
 };
