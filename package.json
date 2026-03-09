@@ -36,7 +36,7 @@
     "@types/express": "^5.0.6",
     "@types/serve-favicon": "^2.5.7",
     "cross-env": "^10.1.0",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.3",
     "globals": "^17.0.0",
     "nodemon": "^3.1.11",
     "prettier": "^3.7.4"
